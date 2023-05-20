@@ -30,7 +30,6 @@ exports.getAllTours = catchAsync(async (req, res, next) => {
   });
 });
 
-
 exports.getTour = catchAsync(async (req, res, next) => {
   const tour = await Tour.findById(req.params.id);
   // Tour.findOne({_id : req.params.id})
@@ -55,7 +54,6 @@ exports.createTour = catchAsync(async (req, res, next) => {
     },
   });
 });
-
 
 exports.updateTour = catchAsync(async (req, res, next) => {
   const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
@@ -154,7 +152,3 @@ exports.getMonthlyPlan = catchAsync(async (req, res, next) => {
     },
   });
 });
-
-
-
-
