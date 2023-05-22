@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcrypt');
 
-
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -49,6 +48,8 @@ const userSchema = new mongoose.Schema({
     select: false,
   },
 });
+
+//Middleware Query
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
   this.password = await bcrypt.hash(this.password, 12);
@@ -69,6 +70,7 @@ userSchema.pre(/^find/, function (next) {
   next();
 });
 
+//Middleware Methods
 userSchema.methods.correctPassword = async function (
   candidatePassword,
   userPassword
@@ -95,7 +97,7 @@ userSchema.methods.createPasswordResetToken = function () {
     .update(resetToken)
     .digest('hex');
 
-  console.log({ resetToken }, this.passwordResetToken);
+  // console.log({ resetToken }, this.passwordResetToken);
 
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
   return resetToken;
@@ -103,7 +105,3 @@ userSchema.methods.createPasswordResetToken = function () {
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
-
-
-
-
