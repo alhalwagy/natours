@@ -2,8 +2,6 @@ const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const APIFeatures = require('./../utils/apiFeatures');
 
-const { Model } = require('mongoose');
-
 // in arrow function when you don't write the {} the code will asign return to function auto
 //in other hand when write {} must you write return
 exports.deleteOne = (Model) =>
