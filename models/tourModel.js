@@ -39,6 +39,7 @@ const tourSchema = new mongoose.Schema(
       default: 4.5,
       min: [1, 'the rating must be above 1.0'],
       max: [5, 'the ratng must be below 5.0'],
+      set: (val) => Math.round(val * 10) / 10, // 4.6666666..... 46....47...4.7
     },
     secretTour: {
       type: Boolean,
@@ -158,6 +159,10 @@ tourSchema.pre(/^find/, function (next) {
 //   next();
 // });
 
+tourSchema.index({ price: 1, ratingsAvarage: -1 });
+tourSchema.index({ slug: 1 });
+tourSchema.index({ startLocation: '2dsphere' });
+
 tourSchema.pre(/^find/, function (next) {
   this.find({ secretTour: { $ne: true } });
   this.start = Date.now();
@@ -170,10 +175,11 @@ tourSchema.post(/^find/, function (docs, next) {
 });
 
 //Aggregition Middleware
-tourSchema.pre('aggregate', function (next) {
-  this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
-  next();
-});
+// i commented it so the ($geoNear) must be first satge in pipline
+// tourSchema.pre('aggregate', function (next) {
+//   this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
+//   next();
+// });
 
 const Tour = mongoose.model('Tour', tourSchema);
 module.exports = Tour;
