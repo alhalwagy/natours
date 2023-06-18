@@ -50,7 +50,8 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-//Middleware Query userSchema.pre('save', async function (next) {
+//Middleware Query
+ userSchema.pre('save', async function (next) {
    if (!this.isModified('password')) return next();
   this.password = await bcrypt.hash(this.password, 12);
   this.passwordConfirm = undefined;
