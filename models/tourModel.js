@@ -169,10 +169,10 @@ tourSchema.pre(/^find/, function (next) {
   next();
 });
 
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`the query took ${Date.now() - this.start} milliseconds`);
-  next();
-});
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`the query took ${Date.now() - this.start} milliseconds`);
+//   next();
+// });
 
 //Aggregition Middleware
 // i commented it so the ($geoNear) must be first satge in pipline

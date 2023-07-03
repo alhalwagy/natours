@@ -83,7 +83,7 @@ reviewSchema.post('save', function (next) {
 //i save the document in this to pass it to post query
 reviewSchema.pre(/^findOneAnd/, async function (next) {
   this.r = await this.findOne();
-  console.log(this.r);
+  // console.log(this.r);
 
   next();
 });
