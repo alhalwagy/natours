@@ -19,7 +19,6 @@ const errorController = require('./controller/errorController');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const bookingController = require('./controller/bookingController');
-const viewController = require('./controller/viewController');
 
 const viewRouter = require('./routes/viewRoutes');
 
@@ -152,8 +151,7 @@ app.use('/api', limiter);
 app.post(
   '/webhook-checkout',
   express.raw({ type: 'application/json' }),
-  bookingController.webhookCheckout,
-  viewController.alerts
+  bookingController.webhookCheckout
 );
 
 //body parser,reading data from body inyo req.body
