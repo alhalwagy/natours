@@ -6,14 +6,14 @@ Natours is a web application for browsing and booking tours online.
 
 ## Images
 
-![natours](https://github.com/alhalwagy/natours/blob/master/s1.jpeg)
-![natours](https://github.com/alhalwagy/natours/blob/master/s2.jpeg)
-![natours](https://github.com/alhalwagy/natours/blob/master/s3.jpeg)
-![natours](https://github.com/alhalwagy/natours/blob/master/s4.jpeg)
-![natours](https://github.com/alhalwagy/natours/blob/master/s5.jpeg)
-![natours](https://github.com/alhalwagy/natours/blob/master/s6.jpeg)
-![natours](https://github.com/alhalwagy/natours/blob/master/s7.jpeg)
-![natours](https://github.com/alhalwagy/natours/blob/master/s8.jpeg)
+![natours](https://github.com/alhalwagy/natours/blob/master/s1.jpg)
+![natours](https://github.com/alhalwagy/natours/blob/master/s2.jpg)
+![natours](https://github.com/alhalwagy/natours/blob/master/s3.jpg)
+![natours](https://github.com/alhalwagy/natours/blob/master/s4.jpg)
+![natours](https://github.com/alhalwagy/natours/blob/master/s5.jpg)
+![natours](https://github.com/alhalwagy/natours/blob/master/s6.jpg)
+![natours](https://github.com/alhalwagy/natours/blob/master/s7.jpg)
+![natours](https://github.com/alhalwagy/natours/blob/master/s8.jpg)
 
 ## Technologies:
 
